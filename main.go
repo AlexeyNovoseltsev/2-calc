@@ -68,7 +68,7 @@ func main() {
 	// Для среднего считаем сумму и делим на количество элементов
 	case "AVG":
 
-		fmt.Println(sum / quantityElements)
+		fmt.Println(float64(sum) / float64(quantityElements))
 
 	// Для медианы первым делом нужно отсортировать срез.
 	case "MED":
@@ -83,12 +83,12 @@ func main() {
 
 			// Если четное, медиана - это среднее арифметическое двух центральных элементов.
 		} else {
-			fmt.Println(numbers[middle] + numbers[middle-1]/2)
+			fmt.Println((numbers[middle-1] + numbers[middle]) / 2)
 		}
 
 	// Если введена операция, которую мы не знаем, сообщаем об ошибке.
 	default:
-		fmt.Println("Ошибка! Неизвестная операция!")
+		fmt.Println("Ошибка! Неизвестная операция")
 		os.Exit(1)
 	}
 
